@@ -33,6 +33,14 @@ app.get('', (req, res) => {
     res.json({'success': true});
 })
 
+if(process.env.NODE_ENV === "production") {
+    const appPath = path.join(__dirname, '..', 'dist', 'MyProfile');
+    app.use(express.static(appPath))
+    app.get("*", (req, res) => {
+        res.sendFile(path.resolve(appPath, "index.html"));
+    })
+}
+
 app.listen(PORT, () => {
     console.log('Running')
 })
