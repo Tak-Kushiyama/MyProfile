@@ -8,24 +8,33 @@ const otherSkillRouter = require('./routes/otherSkill');
 const config = require('./config/index')
 const FakeDb = require('./fake-db')
 
+const path = require('path')
+
 // Connection MongoDB and insert fake data
 mongoose.connect(config.DB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(
     () => {
-        if(process.env.NODE_ENV !== "production") {
+        //if(process.env.NODE_ENV !== "production") {
             const fakeDb = new FakeDb();
             fakeDb.initDb();
-        }
+        //}
     }
 )
 
 const app = express()
 
+
 app.use('/api/v1/experience', experienceRouter);
 app.use('/api/v1/core-skill', coreSkillRouter);
 app.use('/api/v1/other-skill', otherSkillRouter);
+
+const appPath = path.join(__dirname, '..', 'dist', 'my-profile')
+app.use(express.static(appPath))
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(appPath, 'index.html'))
+})
 
 const PORT = process.env.PORT || '3001'
 
