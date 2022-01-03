@@ -44,3 +44,9 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# dummy data
+/server/fake-db.js
+
+# Config files
+/server/config/dev.js
