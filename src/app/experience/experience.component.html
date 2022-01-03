@@ -2,31 +2,20 @@
     <div class="container">
         <h2 class="ds-heading">Work Experience</h2>
         <div class="row ds-experience-list">
-            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6" *ngFor="let experience of experiences">
                 <section>
-                <span class="ds-year">2019 - Present</span>
-                <h3 class="ds-officename">Matrix Media Inc</h3>
-                <span class="ds-department">Full Stack developer</span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis sem maximus, ornare metus ut, congue enim. Sed fermentum.</p>
+                <span class="ds-year">{{ experience.date }}</span>
+                <h3 class="ds-officename">{{ experience.companyName }}</h3>
+                <span class="ds-department">{{ experience.role }}</span>
+                <p>{{ experience.description }}</p>
                 <ul>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis sem maximus, ornare metus ut.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                    <li>{{ experience.workDetail1 }}</li>
+                    <li>{{ experience.workDetail2 }}</li>
+                    <li>{{ experience.workDetail3 }}</li>
+                    <li>{{ experience.workDetail4 }}</li>
+                    <li>{{ experience.workDetail5 }}</li>
                 </ul>
                 </section>
             </div>
-            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                <section>
-                <span class="ds-year">2018 - 2019</span>
-                <h3 class="ds-officename">Lexind</h3>
-                <span class="ds-department">Senior app developer</span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis sem maximus, ornare metus ut, congue enim. Sed fermentum.</p>
-                <ul>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis sem maximus, ornare metus ut.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis sem maximus, ornare metus ut.</li>
-                </ul>
-                </section>
-            </div>
-        </div>
     </div>
 </div>

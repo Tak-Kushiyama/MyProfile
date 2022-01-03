@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from '../service/httpClient.service'
+
 
 @Component({
   selector: 'app-experience',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExperienceComponent implements OnInit {
 
-  constructor() { }
+  experiences : any
+
+  constructor(private httpClientService : HttpService) { }
 
   ngOnInit(): void {
+    this.experiences = this.httpClientService.getDataFromServer('experience')
+
+    const experienceObservable = this.httpClientService.getDataFromServer('experience')
+
+    experienceObservable.subscribe(
+      (data) => {
+        this.experiences = data;
+      },
+      (err) => {
+        console.log("ERROR");
+      }
+    )
   }
 
 }
