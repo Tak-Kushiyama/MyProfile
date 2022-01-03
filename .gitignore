@@ -45,8 +45,5 @@ testem.log
 .DS_Store
 Thumbs.db
 
-# dummy data
-/server/config/fake-db.js
-
 # Config files
 /server/config/dev.js
