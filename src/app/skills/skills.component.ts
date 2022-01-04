@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core'
 import { HttpService } from '../service/httpClient.service'
 
+interface Skill {
+  _id: String,
+  skillName: String,
+}
+
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.component.html',
@@ -20,6 +25,8 @@ export class SkillsComponent implements OnInit {
 
     coreSkillObservable.subscribe(
       (data) => {
+        const coreSkillData : [Skill] = data
+        coreSkillData.sort(this.sortById)
         this.coreSkills = data;
       },
       (err) => {
@@ -34,12 +41,20 @@ export class SkillsComponent implements OnInit {
 
     otherSkillObservable.subscribe(
       (data) => {
+        const otherSkillData : [Skill] = data
+        otherSkillData.sort(this.sortById)
         this.otherSkills = data;
       },
       (err) => {
         console.log("ERROR");
       }
     )
+  }
+
+  sortById(a: Skill, b: Skill) {
+    let id1 = a._id
+    let id2 = b._id
+    return a._id > b._id ? 1 : -1
   }
 
 }
