@@ -24,7 +24,7 @@ class FakeDb {
                 title: 'New System Development',
                 role: 'Software engineer',
                 description: 'I have developed next generation alarm monitoring system for vessel.',
-                workDetail1: 'Development of embedded software for HMI and hardware (Renesas SH & H8)',
+                workDetail1: 'Development of embedded software for HMI and hardware (Renesas SH-A & H8)',
                 workDetail2: 'RS422/485 serial communication (HDLC / Modbus / NMEA protocol)',
                 workDetail3: 'TCP/UDP communication',
                 workDetail4: 'EMC test (IEC 61000-4-2,3,4,5,6 & CISPR 16-2-1,3)',
@@ -36,10 +36,10 @@ class FakeDb {
                 title: 'System update',
                 role: 'Software engineer',
                 description: "I have customized the system to meet the customer's requirements.",
-                workDetail1: "Survey of customers' requests and adjustment of specifications",
-                workDetail2: "Communication linkage with other manufacturers' devices",
-                workDetail3: "Ballast water automation system",
-                workDetail4: 'Total control system',
+                workDetail1: "Auto heel control system",
+                workDetail2: "PID control",
+                workDetail3: "Auto ballast water control system",
+                workDetail4: 'Vessel total control system',
                 workDetail5: 'Fuel gas control system',
             },
             {
@@ -82,6 +82,9 @@ class FakeDb {
                 skillName: 'ASP.NET CORE'
             },
             {
+                skillName: 'xUnit'
+            },
+            {
                 skillName: 'Git'
             },
             {
@@ -122,6 +125,9 @@ class FakeDb {
             },
             {
                 skillName: 'EMC(Electromagnetic compatibility)'
+            },
+            {
+                skillName: 'Agile(Scrum)'
             },
         ]
     }
