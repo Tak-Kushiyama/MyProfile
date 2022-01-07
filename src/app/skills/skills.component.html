@@ -1,18 +1,20 @@
-<div class="ds-skills-section">
-    <div class="container">
-        <div class="row">
-        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-            <h2 class="ds-heading">Core Skills</h2>
-            <ul class="ds-skills-list">
-                <li *ngFor="let coreSkill of coreSkills">{{ coreSkill.skillName }}</li>
-            </ul>
-        </div>
-        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-            <h2 class="ds-heading">Other Skills</h2>
-            <ul class="ds-skills-list">
-                <li *ngFor="let otherSkill of otherSkills">{{ otherSkill.skillName }}</li>
-            </ul>
-        </div>
+<div *ngIf="coreSkills && otherSkills">
+    <div class="ds-skills-section">
+        <div class="container">
+            <div class="row">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                <h2 class="ds-heading">Core Skills</h2>
+                <ul class="ds-skills-list">
+                    <li *ngFor="let coreSkill of coreSkills">{{ coreSkill.skillName }}</li>
+                </ul>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                <h2 class="ds-heading">Other Skills</h2>
+                <ul class="ds-skills-list">
+                    <li *ngFor="let otherSkill of otherSkills">{{ otherSkill.skillName }}</li>
+                </ul>
+            </div>
+            </div>
         </div>
     </div>
 </div>
